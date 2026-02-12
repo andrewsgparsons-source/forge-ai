@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-02-12T19:00:00Z",
+  "updatedBy": "james",
+  "categories": [
+    { "id": "vision", "name": "Vision", "emoji": "🎯" },
+    { "id": "product", "name": "Product", "emoji": "🛠️" },
+    { "id": "marketing", "name": "Marketing", "emoji": "📣" },
+    { "id": "operations", "name": "Operations", "emoji": "⚙️" },
+    { "id": "content", "name": "Content", "emoji": "✍️" }
+  ],
+  "cards": [
+    {
+      "id": "1",
+      "title": "Define core brand narrative",
+      "description": "The fear cycle, corporate paradox, society of builders vision",
+      "status": "done",
+      "priority": "high",
+      "category": "vision",
+      "createdAt": "2026-02-12T10:00:00Z",
+      "completedAt": "2026-02-12T15:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Build Forge AI dashboard",
+      "description": "6-section dashboard with vision, human edge, proof of concept, go to market, ideas",
+      "status": "done",
+      "priority": "high",
+      "category": "product",
+      "createdAt": "2026-02-12T12:00:00Z",
+      "completedAt": "2026-02-12T16:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Brand mockup landing page",
+      "description": "Full landing page with Ember palette, hero, cards, brand family comparison",
+      "status": "done",
+      "priority": "medium",
+      "category": "marketing",
+      "createdAt": "2026-02-12T14:00:00Z",
+      "completedAt": "2026-02-12T16:30:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Showcase presentation for Sunday demo",
+      "description": "13-slide full-screen presentation: Fear → Proof → Vision → Opportunity → Action",
+      "status": "in-progress",
+      "priority": "high",
+      "category": "marketing",
+      "createdAt": "2026-02-12T17:00:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Register forgeai.co.uk domain",
+      "description": "Domain appears available — needs registration",
+      "status": "backlog",
+      "priority": "high",
+      "category": "operations",
+      "createdAt": "2026-02-12T18:00:00Z"
+    },
+    {
+      "id": "6",
+      "title": "Video generation capability",
+      "description": "Research Runway, Sora, Kling, narrated screen recording pipeline",
+      "status": "backlog",
+      "priority": "high",
+      "category": "content",
+      "createdAt": "2026-02-12T17:00:00Z"
+    },
+    {
+      "id": "7",
+      "title": "Rename Ember → Forge AI throughout codebase",
+      "description": "Update dashboard, mockup, showcase to use Forge AI branding",
+      "status": "backlog",
+      "priority": "medium",
+      "category": "product",
+      "createdAt": "2026-02-12T18:15:00Z"
+    },
+    {
+      "id": "8",
+      "title": "5-lane business model detail",
+      "description": "Flesh out: Consultancy, Course, Done-for-you, All-of-above, Starter Packs",
+      "status": "ideas",
+      "priority": "medium",
+      "category": "vision",
+      "createdAt": "2026-02-12T15:00:00Z"
+    },
+    {
+      "id": "9",
+      "title": "AI transition retreat format",
+      "description": "3-day workshop at the Airbnb property — cross-business with holiday let",
+      "status": "ideas",
+      "priority": "medium",
+      "category": "operations",
+      "createdAt": "2026-02-12T15:30:00Z"
+    },
+    {
+      "id": "10",
+      "title": "Starter Pack templates",
+      "description": "Pre-built operational scaffolds people can clone & customise — like Shopify themes for businesses",
+      "status": "ideas",
+      "priority": "medium",
+      "category": "product",
+      "createdAt": "2026-02-12T15:30:00Z"
+    }
+  ]
+}

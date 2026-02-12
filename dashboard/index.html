@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember — AI Transition Coaching</title>
+  <link rel="stylesheet" href="src/ui/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <!-- Header -->
+    <div class="em-header">
+      <div class="em-logo">☕</div>
+      <div class="em-title">Ember</div>
+      <div class="em-title-sub">AI Transition Coaching</div>
+      <div class="em-subtitle">Section</div>
+      <select id="businessSelect" class="em-select">
+        <option value="vision">Vision</option>
+        <option value="human-edge">The Human Edge</option>
+        <option value="proof">Proof of Concept</option>
+        <option value="products">What We Build</option>
+        <option value="go-to-market">Go to Market</option>
+        <option value="ideas">Ideas</option>
+      </select>
+    </div>
+
+    <!-- Dashboard summary strip -->
+    <div class="em-dashboard" id="dashSummary"></div>
+
+    <!-- Nav steps -->
+    <div class="em-steps" id="navSteps"></div>
+
+    <!-- Footer -->
+    <div class="em-footer">
+      <div class="em-footer-text">☕ Ember · AI Transition Coaching · 2025</div>
+    </div>
+  </div>
+
+  <!-- FLYOUT -->
+  <div class="em-flyout" id="flyout">
+    <div class="em-flyout-header">
+      <span class="em-flyout-title" id="flyoutTitle">—</span>
+      <button class="em-flyout-close" id="flyoutClose">&times;</button>
+    </div>
+    <div class="em-flyout-body" id="flyoutBody"></div>
+  </div>
+
+  <!-- MAIN CONTENT (visible behind flyout when closed) -->
+  <div id="mainContent">
+    <div class="em-welcome">
+      <div class="welcome-emoji">☕</div>
+      <h2>The Future Doesn't Replace You.<br>It Promotes You.</h2>
+      <p>But only if you know the roadmap. Select a section from the sidebar to explore the vision, the proof, and the path forward.</p>
+    </div>
+  </div>
+
+  <script src="src/app.js"></script>
+</body>
+</html>

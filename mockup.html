@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ember Palette — Brand Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+  :root {
+    --primary: #B45309;
+    --primary-light: #D97706;
+    --primary-dark: #92400E;
+    --secondary: #292524;
+    --accent: #D97706;
+    --bg: #FFFBF5;
+    --surface: #F5F0EB;
+    --text: #1C1917;
+    --text-muted: #A8A29E;
+    --text-secondary: #57534E;
+    --border: #E7E0D8;
+    --success: #3A7D1C;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--secondary);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: #D6D3D1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--secondary) 0%, #44403C 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 3rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.2;
+  }
+  .hero h1 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .hero p {
+    color: #D6D3D1;
+    font-size: 1.15rem;
+    max-width: 550px;
+    margin: 0 auto 2.5rem;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.85rem 2.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+  .stat { text-align: center; }
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--success);
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* CARDS SECTION */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--surface);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* TESTIMONIAL / STORY */
+  .story {
+    background: var(--surface);
+    padding: 4rem 2rem;
+  }
+  .story-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .story-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+  }
+  .story-attribution {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .story-attribution strong {
+    color: var(--primary);
+  }
+
+  /* DASHBOARD PREVIEW */
+  .dashboard-preview {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .dash-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+  }
+  .badge {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .dash-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .kpi {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.3rem;
+  }
+  .kpi-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+  }
+  .kpi-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .kpi-change {
+    font-size: 0.8rem;
+    color: var(--success);
+    font-weight: 600;
+  }
+  .progress-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  .progress-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .progress-item:last-child { border-bottom: none; }
+  .progress-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: var(--surface);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+  }
+  .progress-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-width: 160px;
+  }
+  .progress-pct {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: right;
+  }
+
+  /* SWATCHES */
+  .swatches {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  .swatch-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .swatch {
+    width: 120px;
+    text-align: center;
+  }
+  .swatch-color {
+    width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .swatch-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .swatch-hex {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: monospace;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--secondary);
+    color: #A8A29E;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+
+  /* COMPARISON STRIP */
+  .family-strip {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .family-strip h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+  .brand-compare {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .brand-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    background: var(--surface);
+  }
+  .brand-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  .brand-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">[Name<span>TBD</span>]</div>
+  <ul class="nav-links">
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#">Success Stories</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Stop watching the AI revolution. <em>Start leading it.</em></h1>
+  <p>Real guidance from someone who's actually doing it. No hype, no jargon — just practical steps to transform your business with AI.</p>
+  <a href="#" class="btn-primary">Start Your Journey</a>
+  <a href="#" class="btn-secondary">See How It Works</a>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-number">2 weeks</div>
+    <div class="stat-label">From idea to dashboard</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">3</div>
+    <div class="stat-label">Businesses managed with AI</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">10×</div>
+    <div class="stat-label">Productivity multiplier</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">£0</div>
+    <div class="stat-label">Additional staff hired</div>
+  </div>
+</div>
+
+<!-- WHAT YOU'LL BUILD -->
+<div class="section">
+  <h2 class="section-title">What You'll Build</h2>
+  <p class="section-subtitle">These aren't theoretical. Every one of these was built in under a month.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Business Dashboards</h3>
+      <p>Custom dashboards that pull from your real data. No more spreadsheet hell — see everything in one place.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <h3>Product Configurators</h3>
+      <p>Interactive 3D tools your customers can use. Quote-ready designs without you lifting a finger.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>AI Workflows</h3>
+      <p>An AI assistant that knows your business. It reads your data, tracks your projects, and works while you sleep.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>Automated Reporting</h3>
+      <p>From farm spray records to financial summaries. Data flows in, insight comes out — automatically.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺️</div>
+      <h3>Project Management</h3>
+      <p>Kanban boards, task tracking, decision maps. All custom-built for how you actually work.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>Marketing Assets</h3>
+      <p>Animated product videos, competitor research, SEO strategies. AI handles the grunt work.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="story">
+  <div class="story-inner">
+    <div class="story-quote">"Two weeks ago I had a basic 3D model and a stack of spreadsheets. Now I've got a parametric configurator, two business dashboards, and an AI assistant that manages it all. I didn't hire anyone."</div>
+    <div class="story-attribution">— <strong>Andrew</strong>, Garden Buildings & Farm Management</div>
+  </div>
+</div>
+
+<!-- DASHBOARD PREVIEW -->
+<div class="dashboard-preview">
+  <div class="dash-header">
+    <h2>Your Progress Dashboard</h2>
+    <span class="badge">PREVIEW</span>
+  </div>
+  <div class="dash-grid">
+    <div class="kpi">
+      <div class="kpi-label">Tasks Completed</div>
+      <div class="kpi-value">47</div>
+      <div class="kpi-change">↑ 12 this week</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Time Saved</div>
+      <div class="kpi-value">62h</div>
+      <div class="kpi-change">↑ vs manual</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">AI Interactions</div>
+      <div class="kpi-value">1.2k</div>
+      <div class="kpi-change">This month</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Tools Built</div>
+      <div class="kpi-value">8</div>
+      <div class="kpi-change">↑ 3 new</div>
+    </div>
+  </div>
+  <div class="progress-section">
+    <div class="progress-item">
+      <div class="progress-label">AI Assistant Setup</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%; background:#3A7D1C;"></div></div>
+      <div class="progress-pct" style="color:#3A7D1C;">100% ✓</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-label">First Dashboard</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:85%; background:linear-gradient(90deg, var(--primary), #3A7D1C);"></div></div>
+      <div class="progress-pct">85%</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-label">Data Automation</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:60%"></div></div>
+      <div class="progress-pct">60%</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-label">Customer-Facing Tools</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:35%"></div></div>
+      <div class="progress-pct">35%</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND FAMILY COMPARISON -->
+<div class="family-strip">
+  <h3>The Brand Family</h3>
+  <div class="brand-compare">
+    <div class="brand-pill">
+      <div class="brand-dot" style="background: #3A7D1C;"></div>
+      <span class="brand-name">Garden Buildings</span>
+    </div>
+    <div class="brand-pill">
+      <div class="brand-dot" style="background: #3A7D1C; border: 3px solid #7C3AED;"></div>
+      <span class="brand-name">Whelpley Farm</span>
+    </div>
+    <div class="brand-pill" style="background: #292524;">
+      <div class="brand-dot" style="background: linear-gradient(135deg, #B45309, #D97706);"></div>
+      <span class="brand-name" style="color: #FFFBF5;">AI Coaching</span>
+    </div>
+  </div>
+</div>
+
+<!-- COLOUR SWATCHES -->
+<div class="swatches">
+  <h3 class="section-title" style="margin-bottom:1.5rem; font-size:1.3rem;">Ember Palette</h3>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B45309;"></div>
+      <div class="swatch-name">Deep Amber</div>
+      <div class="swatch-hex">#B45309</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#292524;"></div>
+      <div class="swatch-name">Charcoal Warm</div>
+      <div class="swatch-hex">#292524</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#D97706;"></div>
+      <div class="swatch-name">Copper Gold</div>
+      <div class="swatch-hex">#D97706</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFBF5;"></div>
+      <div class="swatch-name">Warm Cream</div>
+      <div class="swatch-hex">#FFFBF5</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F5F0EB;"></div>
+      <div class="swatch-name">Soft Stone</div>
+      <div class="swatch-hex">#F5F0EB</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1C1917;"></div>
+      <div class="swatch-name">Dark Stone</div>
+      <div class="swatch-hex">#1C1917</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#3A7D1C;"></div>
+      <div class="swatch-name">Heritage Green</div>
+      <div class="swatch-hex">#3A7D1C</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2D5016;"></div>
+      <div class="swatch-name">cf. Shed/Farm</div>
+      <div class="swatch-hex">#2D5016</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#A8A29E;"></div>
+      <div class="swatch-name">Warm Grey</div>
+      <div class="swatch-hex">#A8A29E</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Brand Mockup — Ember Palette v1 — [Name TBD] © 2026
+</footer>
+
+</body>
+</html>
