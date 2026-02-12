@@ -284,6 +284,38 @@
     h += '<li><strong>Holding your hand</strong> — Patient, honest, no jargon. Starting where you are.</li>';
     h += '</ul></div>';
 
+    h += '<div class="em-section-header">The Two Brands</div>';
+
+    h += '<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">';
+
+    h += '<div class="em-card" style="border-top:3px solid var(--em-primary-light); text-align:center;">';
+    h += '<div style="font-size:32px; margin-bottom:8px;">🎮</div>';
+    h += '<h3 style="font-size:18px;">AI Play</h3>';
+    h += '<p style="font-size:12px; color:var(--em-text-muted); margin-bottom:12px; font-style:italic;">The front door</p>';
+    h += '<p>Workshops. First contact. Retreats. Courses.<br><strong>"Come try this — it\'s not scary."</strong></p>';
+    h += '<ul style="margin-top:12px; padding-left:18px; text-align:left; line-height:2;">';
+    h += '<li>Low-barrier entry point</li>';
+    h += '<li>Weekend retreats at the venue</li>';
+    h += '<li>Hands-on, playful, safe space</li>';
+    h += '<li>Disarms fear through doing</li>';
+    h += '</ul></div>';
+
+    h += '<div class="em-card" style="border-top:3px solid var(--em-primary); text-align:center;">';
+    h += '<div style="font-size:32px; margin-bottom:8px;">🔥</div>';
+    h += '<h3 style="font-size:18px;">Forge AI</h3>';
+    h += '<p style="font-size:12px; color:var(--em-text-muted); margin-bottom:12px; font-style:italic;">What you graduate into</p>';
+    h += '<p>Serious tools. Starter packs. Business building.<br><strong>"Now let\'s build your business."</strong></p>';
+    h += '<ul style="margin-top:12px; padding-left:18px; text-align:left; line-height:2;">';
+    h += '<li>Operational scaffolding</li>';
+    h += '<li>Done-for-you dashboards</li>';
+    h += '<li>1-to-1 coaching</li>';
+    h += '<li>The builder community</li>';
+    h += '</ul></div>';
+
+    h += '</div>';
+
+    h += '<div class="em-story" style="margin-top:16px; text-align:center;"><div class="em-story-quote">"Play gets them in. Forge keeps them building."</div></div>';
+
     return { html: h };
   }
 
