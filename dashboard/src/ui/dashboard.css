@@ -1102,29 +1102,70 @@ html, body {
   * { transition-duration: 0.01s !important; }
 }
 
+/* ===== MOBILE HAMBURGER (hidden on desktop) ===== */
+.em-hamburger { display: none; }
+.em-sidebar-overlay { display: none; }
+
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  :root {
-    --em-sidebar-w: 260px;
+  /* Hamburger button */
+  .em-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    width: 44px;
+    height: 44px;
+    background: var(--em-bg-panel);
+    border: 1px solid var(--em-border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1100;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--em-text);
+    -webkit-tap-highlight-color: transparent;
   }
 
+  /* Hide hamburger when flyout is open */
+  body:has(.em-flyout.open) .em-hamburger {
+    display: none;
+  }
+
+  /* Sidebar hidden by default on mobile */
   #sidebar {
-    width: var(--em-sidebar-w);
     position: fixed;
     height: 100%;
-    z-index: 1000;
+    z-index: 1050;
+    width: 280px;
+    transform: translateX(-100%);
     transition: transform 0.25s ease;
   }
 
-  /* When flyout is open, slide sidebar off-screen */
-  #sidebar.flyout-active {
-    transform: translateX(-100%);
+  #sidebar.mobile-open {
+    transform: translateX(0);
   }
 
+  /* Dark overlay behind sidebar */
+  .em-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1040;
+  }
+
+  .em-sidebar-overlay.active {
+    display: block;
+  }
+
+  /* Flyout full screen */
   .em-flyout {
     left: 0;
     width: 100vw !important;
-    z-index: 1001;
+    z-index: 1060;
   }
 
   .em-flyout.open {

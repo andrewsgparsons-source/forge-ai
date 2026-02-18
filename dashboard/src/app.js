@@ -6,6 +6,33 @@
 (function () {
   "use strict";
 
+  // ── Mobile hamburger menu ──
+  (function setupMobileMenu() {
+    var hamburger = document.getElementById('emHamburger');
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('emSidebarOverlay');
+    if (!hamburger || !sidebar || !overlay) return;
+
+    function openMenu() {
+      sidebar.classList.add('mobile-open');
+      overlay.classList.add('active');
+    }
+
+    function closeMenu() {
+      sidebar.classList.remove('mobile-open');
+      overlay.classList.remove('active');
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when a nav step is clicked
+    sidebar.addEventListener('click', function(e) {
+      var step = e.target.closest('.em-step');
+      if (step) closeMenu();
+    });
+  })();
+
   // ── Section configurations ──
   var sections = {
     vision: {
@@ -1170,8 +1197,6 @@
     flyoutTitle.textContent = stepName;
     flyoutBody.innerHTML = result.html;
     flyout.classList.add("open");
-    var sb = document.getElementById("sidebar");
-    if (sb) sb.classList.add("flyout-active");
     if (result.afterRender) setTimeout(result.afterRender, 50);
   }
 
@@ -1179,8 +1204,6 @@
 
   function closeFlyout() {
     flyout.classList.remove("open");
-    var sb = document.getElementById("sidebar");
-    if (sb) sb.classList.remove("flyout-active");
     setActiveStep(null);
     Object.keys(activeCharts).forEach(function(k) { activeCharts[k].destroy(); delete activeCharts[k]; });
   }
