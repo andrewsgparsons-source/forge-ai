@@ -1179,15 +1179,17 @@ html, body {
     display: block;
   }
 
-  /* Flyout full screen */
+  /* Flyout full screen when open */
   .em-flyout {
     left: 0;
-    width: 100vw !important;
+    width: 0;
     z-index: 1060;
+    pointer-events: none;
   }
 
   .em-flyout.open {
     width: 100vw;
+    pointer-events: auto;
   }
 
   #mainContent {
