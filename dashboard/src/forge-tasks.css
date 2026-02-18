@@ -1,0 +1,235 @@
+/* ─── Forge Tasks Panel (injected into sidebar) ─── */
+
+.forge-tasks-panel {
+  border-bottom: 1px solid var(--em-border, #E7E0D8);
+  flex-shrink: 0;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.forge-tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 6px;
+}
+
+.forge-tasks-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--em-primary, #B45309);
+}
+
+.forge-tasks-add-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1.5px solid var(--em-border, #E7E0D8);
+  background: transparent;
+  color: var(--em-primary, #B45309);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.forge-tasks-add-btn:hover {
+  background: var(--em-primary, #B45309);
+  border-color: var(--em-primary, #B45309);
+  color: #fff;
+}
+
+/* ─── Task list ─── */
+.forge-tasks-list {
+  overflow-y: auto;
+  padding: 4px 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+.forge-tasks-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.forge-tasks-list::-webkit-scrollbar-thumb {
+  background: var(--em-border, #E7E0D8);
+  border-radius: 2px;
+}
+
+.forge-tasks-empty {
+  text-align: center;
+  padding: 16px 8px;
+  font-size: 12px;
+  color: var(--em-text-muted, #A8A29E);
+}
+
+/* ─── Individual task ─── */
+.forge-task-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.forge-task-item:hover {
+  background: var(--em-surface, #F5F0EB);
+}
+
+.forge-task-item.prio-high {
+  border-left-color: #dc2626;
+}
+
+.forge-task-item.prio-medium {
+  border-left-color: var(--em-primary, #B45309);
+}
+
+.forge-task-item.prio-low {
+  border-left-color: var(--em-green, #3A7D1C);
+}
+
+.forge-task-item.forge-task-done {
+  opacity: 0.5;
+}
+
+.forge-task-item.forge-task-done .forge-task-text {
+  text-decoration: line-through;
+}
+
+/* ─── Checkbox ─── */
+.forge-task-check {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--em-border, #E7E0D8);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: transparent;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.forge-task-check:hover {
+  border-color: var(--em-green, #3A7D1C);
+  background: rgba(58, 125, 28, 0.1);
+  color: var(--em-green, #3A7D1C);
+}
+
+.forge-task-done .forge-task-check {
+  border-color: var(--em-green, #3A7D1C);
+  background: var(--em-green, #3A7D1C);
+  color: #fff;
+}
+
+/* ─── Task text (clickable for detail) ─── */
+.forge-task-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--em-text, #1C1917);
+  cursor: pointer;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.forge-task-text:hover {
+  color: var(--em-primary, #B45309);
+}
+
+/* ─── Add form ─── */
+.forge-tasks-add-form {
+  padding: 6px 12px 8px;
+}
+
+.forge-task-input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  border: 1.5px solid var(--em-border, #E7E0D8);
+  border-radius: 6px;
+  background: var(--em-surface, #F5F0EB);
+  color: var(--em-text, #1C1917);
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.forge-task-input:focus {
+  border-color: var(--em-primary, #B45309);
+}
+
+.forge-add-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.forge-task-select {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  border: 1.5px solid var(--em-border, #E7E0D8);
+  border-radius: 6px;
+  background: var(--em-surface, #F5F0EB);
+  color: var(--em-text, #1C1917);
+  outline: none;
+  cursor: pointer;
+}
+
+.forge-task-save-btn {
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: 6px;
+  background: var(--em-primary, #B45309);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.forge-task-save-btn:hover {
+  background: var(--em-primary-dark, #92400E);
+}
+
+/* ─── Footer ─── */
+.forge-tasks-footer {
+  padding: 4px 12px 8px;
+  text-align: center;
+}
+
+.forge-toggle-done {
+  border: none;
+  background: none;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  color: var(--em-text-muted, #A8A29E);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.forge-toggle-done:hover {
+  color: var(--em-primary, #B45309);
+  background: var(--em-primary-bg, rgba(180, 83, 9, 0.08));
+}
