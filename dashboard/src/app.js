@@ -1170,6 +1170,8 @@
     flyoutTitle.textContent = stepName;
     flyoutBody.innerHTML = result.html;
     flyout.classList.add("open");
+    var sb = document.getElementById("sidebar");
+    if (sb) sb.classList.add("flyout-active");
     if (result.afterRender) setTimeout(result.afterRender, 50);
   }
 
@@ -1177,6 +1179,8 @@
 
   function closeFlyout() {
     flyout.classList.remove("open");
+    var sb = document.getElementById("sidebar");
+    if (sb) sb.classList.remove("flyout-active");
     setActiveStep(null);
     Object.keys(activeCharts).forEach(function(k) { activeCharts[k].destroy(); delete activeCharts[k]; });
   }

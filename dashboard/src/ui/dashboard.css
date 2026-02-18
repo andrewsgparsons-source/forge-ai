@@ -1101,3 +1101,38 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01s !important; }
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  :root {
+    --em-sidebar-w: 260px;
+  }
+
+  #sidebar {
+    width: var(--em-sidebar-w);
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+    transition: transform 0.25s ease;
+  }
+
+  /* When flyout is open, slide sidebar off-screen */
+  #sidebar.flyout-active {
+    transform: translateX(-100%);
+  }
+
+  .em-flyout {
+    left: 0;
+    width: 100vw !important;
+    z-index: 1001;
+  }
+
+  .em-flyout.open {
+    width: 100vw;
+  }
+
+  #mainContent {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
