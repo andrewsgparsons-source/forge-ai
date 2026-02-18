@@ -1105,6 +1105,7 @@ html, body {
 /* ===== MOBILE HAMBURGER (hidden on desktop) ===== */
 .em-hamburger { display: none; }
 .em-sidebar-overlay { display: none; }
+.em-sidebar-close { display: none; }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
@@ -1132,6 +1133,23 @@ html, body {
   /* Hide hamburger when flyout is open */
   body:has(.em-flyout.open) .em-hamburger {
     display: none;
+  }
+
+  /* Sidebar close button */
+  .em-sidebar-close {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    color: var(--em-text-muted);
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 6px;
   }
 
   /* Sidebar hidden by default on mobile */
