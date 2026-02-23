@@ -1222,6 +1222,16 @@
     if (key === 'ideas') updateIdeasDashboard();
     renderDashboard(sec);
     renderSteps(sec);
+
+    // Auto-open the first step instead of showing welcome screen
+    if (sec.steps && sec.steps.length > 0) {
+      var firstStepName = sec.steps[0].label;
+      var firstBtn = navSteps.querySelector('.em-step');
+      if (firstBtn) {
+        openFlyout(firstStepName);
+        setActiveStep(firstBtn);
+      }
+    }
   }
 
   bizSelect.addEventListener("change", function () { switchSection(bizSelect.value); });
